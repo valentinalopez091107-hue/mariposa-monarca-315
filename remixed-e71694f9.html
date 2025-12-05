@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariposas Monarca - Exposición</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #ff6b35;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #ffa500;
+            padding-bottom: 10px;
+        }
+
+        .butterfly-icon {
+            display: inline-block;
+            font-size: 2em;
+            margin-right: 10px;
+            animation: flutter 3s ease-in-out infinite;
+        }
+
+        @keyframes flutter {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-5px) rotate(5deg); }
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: scale(1.05);
+        }
+
+        .info-card h3 {
+            color: #d63031;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .migration-path {
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            margin: 20px 0;
+        }
+
+        .fact-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffa500;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .fact-box strong {
+            color: #ff6b35;
+        }
+
+        .lifecycle {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .lifecycle-stage {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            padding: 20px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 10px;
+        }
+
+        .lifecycle-stage h4 {
+            color: #6c5ce7;
+            margin: 10px 0;
+        }
+
+        .stage-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #666;
+        }
+
+        .conservation {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="butterfly-icon">🦋</span>Mariposas Monarca<span class="butterfly-icon">🦋</span></h1>
+            <p class="subtitle">Danaus plexippus - Las viajeras más extraordinarias</p>
+            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 10px;">
+                <p style="font-size: 1.2em; color: #d63031; margin-bottom: 5px;"><strong>Presentado por:</strong></p>
+                <p style="font-size: 1.1em; color: #333;">López Bernal Ximena</p>
+                <p style="font-size: 1.1em; color: #333;">Monroy Ramírez Alexa Yanet</p>
+                <p style="font-size: 1.1em; color: #d63031; margin-top: 10px;"><strong>Grupo 315</strong></p>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>¿Qué son las Mariposas Monarca?</h2>
+            <p>Las mariposas monarca son una de las especies de insectos más reconocibles y admiradas del mundo. Conocidas científicamente como <em>Danaus plexippus</em>, estas criaturas son famosas por sus vibrantes colores naranjas y negros, y por realizar una de las migraciones más impresionantes del reino animal.</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Envergadura</h3>
+                    <p>8.9 - 10.2 cm</p>
+                </div>
+                <div class="info-card">
+                    <h3>Peso</h3>
+                    <p>0.5 - 0.75 gramos</p>
+                </div>
+                <div class="info-card">
+                    <h3>Esperanza de Vida</h3>
+                    <p>2-6 semanas (hasta 8 meses la generación migratoria)</p>
+                </div>
+                <div class="info-card">
+                    <h3>Velocidad de Vuelo</h3>
+                    <p>20-30 km/h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌎 La Gran Migración</h2>
+            <div class="migration-path">
+                <h3>Un viaje épico de miles de kilómetros</h3>
+                <p>Cada año, millones de mariposas monarca realizan un viaje extraordinario desde Canadá y Estados Unidos hasta los bosques de oyamel en México, recorriendo hasta 4,500 kilómetros.</p>
+            </div>
+            
+            <div class="fact-box">
+                <strong>Dato asombroso:</strong> Las mariposas que migran nunca han estado en México antes. Utilizan una combinación de brújula solar, campo magnético terrestre y memoria genética para encontrar el camino que sus ancestros recorrieron.
+            </div>
+
+            <p><strong>Ruta migratoria:</strong></p>
+            <p>🍁 <strong>Septiembre-Octubre:</strong> Partida desde Canadá y norte de Estados Unidos</p>
+            <p>➡️ <strong>Noviembre:</strong> Llegada a los santuarios en México (Michoacán y Estado de México)</p>
+            <p>🌸 <strong>Marzo:</strong> Inicio del regreso hacia el norte</p>
+            <p>🔄 <strong>Abril-Agosto:</strong> Generaciones sucesivas completan el viaje de regreso</p>
+        </div>
+
+        <div class="section">
+            <h2>🔄 Ciclo de Vida</h2>
+            <p>Las mariposas monarca pasan por una metamorfosis completa con cuatro etapas distintas:</p>
+            
+            <div class="lifecycle">
+                <div class="lifecycle-stage">
+                    <div class="stage-icon">🥚</div>
+                    <h4>Huevo</h4>
+                    <p>3-5 días<br>Depositado en plantas de algodoncillo</p>
+                </div>
+                <div class="lifecycle-stage">
+                    <div class="stage-icon">🐛</div>
+                    <h4>Larva (Oruga)</h4>
+                    <p>10-14 días<br>Se alimenta vorazmente de algodoncillo</p>
+                </div>
+                <div class="lifecycle-stage">
+                    <div class="stage-icon">💚</div>
+                    <h4>Crisálida</h4>
+                    <p>8-15 días<br>Transformación mágica dentro del capullo</p>
+                </div>
+                <div class="lifecycle-stage">
+                    <div class="stage-icon">🦋</div>
+                    <h4>Adulto</h4>
+                    <p>2-6 semanas<br>(8 meses si es generación migratoria)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🌿 Relación con el Algodoncillo</h2>
+            <p>Las mariposas monarca tienen una relación vital con las plantas de algodoncillo (<em>Asclepias</em>):</p>
+            
+            <p><strong>🥚 Para la reproducción:</strong> Las hembras solo depositan sus huevos en plantas de algodoncillo.</p>
+            
+            <p><strong>🛡️ Para la defensa:</strong> Las orugas absorben toxinas del algodoncillo que las hacen venenosas para los depredadores. Sus colores brillantes advierten a los animales: "¡No me comas!"</p>
+            
+            <p><strong>🍽️ Para la alimentación:</strong> Las orugas se alimentan exclusivamente de hojas de algodoncillo.</p>
+        </div>
+
+        <div class="section">
+            <div class="conservation">
+                <h2 style="color: white; border-bottom-color: white;">⚠️ Estado de Conservación</h2>
+                <p>Las mariposas monarca enfrentan serias amenazas:</p>
+                <p>🌳 <strong>Deforestación</strong> de sus hábitats de hibernación en México</p>
+                <p>🌾 <strong>Pérdida de algodoncillo</strong> debido a herbicidas y agricultura intensiva</p>
+                <p>🌡️ <strong>Cambio climático</strong> que afecta sus rutas migratorias</p>
+                <p>🏭 <strong>Pesticidas</strong> que reducen sus poblaciones</p>
+                
+                <h3 style="margin-top: 20px;">¿Cómo puedes ayudar?</h3>
+                <p>✅ Planta algodoncillo nativo en tu jardín</p>
+                <p>✅ Evita usar pesticidas</p>
+                <p>✅ Crea jardines amigables para polinizadores</p>
+                <p>✅ Apoya la conservación de bosques</p>
+                <p>✅ Educa a otros sobre su importancia</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎭 Importancia Cultural</h2>
+            <p>En México, la llegada de las mariposas monarca coincide con el Día de Muertos. Muchas comunidades indígenas creen que las mariposas son las almas de los seres queridos que regresan a visitarnos.</p>
+            
+            <p>Los santuarios de la mariposa monarca en México fueron declarados <strong>Patrimonio de la Humanidad por la UNESCO</strong> en 2008, reconociendo su valor universal excepcional.</p>
+        </div>
+
+        <div class="section">
+            <h2>🎮 Juegos Interactivos</h2>
+            
+            <div style="margin-bottom: 40px;">
+                <h3 style="color: #6c5ce7; margin-bottom: 20px;">🔤 Sopa de Letras - Encuentra las palabras</h3>
+                <div id="word-search" style="display: inline-block; background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                    <table id="grid" style="border-collapse: collapse; margin-bottom: 20px;"></table>
+                    <div style="margin-top: 20px;">
+                        <strong>Palabras a encontrar:</strong>
+                        <div id="words-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px;"></div>
+                    </div>
+                    <button onclick="resetWordSearch()" style="margin-top: 20px; padding: 10px 20px; background: #ff6b35; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">🔄 Nueva Sopa</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 style="color: #6c5ce7; margin-bottom: 20px;">🎨 Colorea la Mariposa Monarca</h3>
+                <div style="text-align: center;">
+                    <canvas id="butterfly-canvas" width="600" height="500" style="border: 3px solid #ff6b35; border-radius: 10px; background: white; cursor: crosshair; max-width: 100%;"></canvas>
+                    <div style="margin-top: 20px;">
+                        <strong>Elige un color:</strong><br>
+                        <button onclick="setColor('#FF6B35')" style="width: 50px; height: 50px; background: #FF6B35; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <button onclick="setColor('#000000')" style="width: 50px; height: 50px; background: #000000; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <button onclick="setColor('#FFFFFF')" style="width: 50px; height: 50px; background: #FFFFFF; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <button onclick="setColor('#FFA500')" style="width: 50px; height: 50px; background: #FFA500; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <button onclick="setColor('#FFD700')" style="width: 50px; height: 50px; background: #FFD700; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <button onclick="setColor('#8B4513')" style="width: 50px; height: 50px; background: #8B4513; border: 2px solid #333; margin: 5px; cursor: pointer; border-radius: 5px;"></button>
+                        <br>
+                        <button onclick="clearCanvas()" style="margin-top: 15px; padding: 10px 20px; background: #d63031; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">🗑️ Limpiar</button>
+                        <button onclick="downloadButterfly()" style="margin-top: 15px; padding: 10px 20px; background: #00b894; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1em;">💾 Descargar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Las mariposas monarca nos recuerdan la interconexión de todos los seres vivos</strong></p>
+            <p>Su migración atraviesa fronteras, uniendo a tres países en un esfuerzo de conservación compartido</p>
+            <p style="margin-top: 20px; font-size: 2em;">🦋 🌎 💚</p>
+        </footer>
+
+        <script>
+            // Sopa de letras
+            const words = ['MONARCA', 'MIGRACION', 'MEXICO', 'CANADA', 'MARIPOSA', 'ALGODONCILLO', 'NARANJA', 'OYAMEL'];
+            let grid = [];
+            let foundWords = new Set();
+
+            function createWordSearch() {
+                const size = 15;
+                grid = Array(size).fill().map(() => Array(size).fill(''));
+                foundWords.clear();
+
+                words.forEach(word => {
+                    let placed = false;
+                    let attempts = 0;
+                    while (!placed && attempts < 100) {
+                        const direction = Math.floor(Math.random() * 3); // 0: horizontal, 1: vertical, 2: diagonal
+                        const row = Math.floor(Math.random() * size);
+                        const col = Math.floor(Math.random() * size);
+                        
+                        if (canPlaceWord(word, row, col, direction, size)) {
+                            placeWord(word, row, col, direction);
+                            placed = true;
+                        }
+                        attempts++;
+                    }
+                });
+
+                for (let i = 0; i < size; i++) {
+                    for (let j = 0; j < size; j++) {
+                        if (grid[i][j] === '') {
+                            grid[i][j] = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                        }
+                    }
+                }
+
+                displayGrid();
+                displayWords();
+            }
+
+            function canPlaceWord(word, row, col, direction, size) {
+                const len = word.length;
+                if (direction === 0 && col + len > size) return false;
+                if (direction === 1 && row + len > size) return false;
+                if (direction === 2 && (row + len > size || col + len > size)) return false;
+
+                for (let i = 0; i < len; i++) {
+                    const r = direction === 1 || direction === 2 ? row + i : row;
+                    const c = direction === 0 || direction === 2 ? col + i : col;
+                    if (grid[r][c] !== '' && grid[r][c] !== word[i]) return false;
+                }
+                return true;
+            }
+
+            function placeWord(word, row, col, direction) {
+                for (let i = 0; i < word.length; i++) {
+                    const r = direction === 1 || direction === 2 ? row + i : row;
+                    const c = direction === 0 || direction === 2 ? col + i : col;
+                    grid[r][c] = word[i];
+                }
+            }
+
+            function displayGrid() {
+                const table = document.getElementById('grid');
+                table.innerHTML = '';
+                grid.forEach((row, i) => {
+                    const tr = document.createElement('tr');
+                    row.forEach((cell, j) => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        td.id = `cell-${i}-${j}`;
+                        td.style.cssText = 'width: 30px; height: 30px; border: 1px solid #ddd; text-align: center; font-weight: bold; cursor: pointer; transition: all 0.3s;';
+                        td.onclick = () => checkCell(i, j, td);
+                        tr.appendChild(td);
+                    });
+                    table.appendChild(tr);
+                });
+            }
+
+            function displayWords() {
+                const wordsList = document.getElementById('words-list');
+                wordsList.innerHTML = '';
+                words.forEach(word => {
+                    const div = document.createElement('div');
+                    div.id = `word-${word}`;
+                    div.textContent = word;
+                    div.style.cssText = foundWords.has(word) ? 'text-decoration: line-through; color: #00b894;' : 'color: #333;';
+                    wordsList.appendChild(div);
+                });
+            }
+
+            let selectedCells = [];
+            function checkCell(row, col, td) {
+                if (td.style.background === 'rgb(255, 107, 53)') {
+                    return;
+                }
+                
+                td.style.background = '#ffecd2';
+                selectedCells.push({row, col, td});
+                
+                setTimeout(() => {
+                    checkForWord();
+                }, 300);
+            }
+
+            function checkForWord() {
+                if (selectedCells.length < 3) {
+                    selectedCells.forEach(cell => {
+                        if (cell.td.style.background !== 'rgb(255, 107, 53)') {
+                            cell.td.style.background = '';
+                        }
+                    });
+                    selectedCells = [];
+                    return;
+                }
+
+                const word = selectedCells.map(cell => grid[cell.row][cell.col]).join('');
+                
+                if (words.includes(word) && !foundWords.has(word)) {
+                    foundWords.add(word);
+                    selectedCells.forEach(cell => cell.td.style.background = '#ff6b35');
+                    displayWords();
+                    
+                    if (foundWords.size === words.length) {
+                        setTimeout(() => alert('¡Felicidades! ¡Encontraste todas las palabras! 🎉'), 500);
+                    }
+                } else {
+                    selectedCells.forEach(cell => {
+                        if (cell.td.style.background !== 'rgb(255, 107, 53)') {
+                            cell.td.style.background = '';
+                        }
+                    });
+                }
+                selectedCells = [];
+            }
+
+            function resetWordSearch() {
+                createWordSearch();
+            }
+
+            // Colorear mariposa
+            const canvas = document.getElementById('butterfly-canvas');
+            const ctx = canvas.getContext('2d');
+            let currentColor = '#FF6B35';
+            let isDrawing = false;
+
+            function drawButterfly() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = '#000';
+                ctx.lineWidth = 3;
+
+                // Cuerpo
+                ctx.beginPath();
+                ctx.ellipse(300, 250, 15, 80, 0, 0, Math.PI * 2);
+                ctx.stroke();
+
+                // Cabeza
+                ctx.beginPath();
+                ctx.arc(300, 180, 20, 0, Math.PI * 2);
+                ctx.stroke();
+
+                // Antenas
+                ctx.beginPath();
+                ctx.moveTo(295, 170);
+                ctx.quadraticCurveTo(280, 150, 275, 140);
+                ctx.moveTo(305, 170);
+                ctx.quadraticCurveTo(320, 150, 325, 140);
+                ctx.stroke();
+
+                // Ala superior izquierda
+                ctx.beginPath();
+                ctx.moveTo(285, 200);
+                ctx.bezierCurveTo(150, 150, 120, 220, 160, 280);
+                ctx.bezierCurveTo(180, 290, 250, 270, 285, 240);
+                ctx.closePath();
+                ctx.stroke();
+
+                // Ala inferior izquierda
+                ctx.beginPath();
+                ctx.moveTo(285, 260);
+                ctx.bezierCurveTo(180, 300, 150, 350, 200, 380);
+                ctx.bezierCurveTo(230, 370, 270, 330, 285, 300);
+                ctx.closePath();
+                ctx.stroke();
+
+                // Ala superior derecha
+                ctx.beginPath();
+                ctx.moveTo(315, 200);
+                ctx.bezierCurveTo(450, 150, 480, 220, 440, 280);
+                ctx.bezierCurveTo(420, 290, 350, 270, 315, 240);
+                ctx.closePath();
+                ctx.stroke();
+
+                // Ala inferior derecha
+                ctx.beginPath();
+                ctx.moveTo(315, 260);
+                ctx.bezierCurveTo(420, 300, 450, 350, 400, 380);
+                ctx.bezierCurveTo(370, 370, 330, 330, 315, 300);
+                ctx.closePath();
+                ctx.stroke();
+
+                // Detalles de las alas
+                ctx.lineWidth = 2;
+                
+                // Manchas en alas superiores
+                ctx.beginPath();
+                ctx.arc(200, 220, 15, 0, Math.PI * 2);
+                ctx.moveTo(235, 205);
+                ctx.arc(220, 205, 15, 0, Math.PI * 2);
+                ctx.moveTo(415, 220);
+                ctx.arc(400, 220, 15, 0, Math.PI * 2);
+                ctx.moveTo(395, 205);
+                ctx.arc(380, 205, 15, 0, Math.PI * 2);
+                ctx.stroke();
+
+                // Manchas en alas inferiores
+                ctx.beginPath();
+                ctx.arc(220, 320, 12, 0, Math.PI * 2);
+                ctx.moveTo(392, 320);
+                ctx.arc(380, 320, 12, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            function setColor(color) {
+                currentColor = color;
+            }
+
+            function clearCanvas() {
+                drawButterfly();
+            }
+
+            canvas.addEventListener('mousedown', (e) => {
+                isDrawing = true;
+                draw(e);
+            });
+
+            canvas.addEventListener('mousemove', (e) => {
+                if (isDrawing) draw(e);
+            });
+
+            canvas.addEventListener('mouseup', () => {
+                isDrawing = false;
+            });
+
+            canvas.addEventListener('mouseleave', () => {
+                isDrawing = false;
+            });
+
+            function draw(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                ctx.fillStyle = currentColor;
+                ctx.beginPath();
+                ctx.arc(x, y, 8, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            function downloadButterfly() {
+                const link = document.createElement('a');
+                link.download = 'mi-mariposa-monarca.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            }
+
+            // Inicializar juegos
+            window.onload = function() {
+                createWordSearch();
+                drawButterfly();
+            };
+        </script>
+    </div>
+</body>
+</html>
